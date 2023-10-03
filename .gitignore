@@ -3,7 +3,9 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 .idea
+/.idea
 DS_in_Java.iml
+*.iml
 
 ### Eclipse ###
 .apt_generated
