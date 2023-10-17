@@ -7,11 +7,12 @@ public class OddGame {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
         int i = 1;
+        if ((N & 1) == 0){
+            N = N - 1;
+        }
         while (i <= N) {
-            if ((i & 1) == 1){
-                System.out.print(i + " ");
-            }
-            i++;
+            System.out.print(i + " ");
+            i = i + 2;
         }
     }
 }
