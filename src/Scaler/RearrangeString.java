@@ -29,7 +29,7 @@ public class RearrangeString {
         }
 
         for (int i = 0; i < A.length(); i++){
-            Character ch = A.charAt(i);
+            char ch = A.charAt(i);
             if (!Objects.equals(a_map.get(ch), b_map.get(ch))){
                 return "False";
             }
