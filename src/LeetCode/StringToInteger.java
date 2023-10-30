@@ -10,20 +10,31 @@ public class StringToInteger {
     }
 
     public static int AtoI(String s){
-        int ans = 0, multiplier = 1;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            char
-            if (s.charAt(i) >= 48 && s.charAt(i) <= 57) {
-                if (s.charAt(i) == '-') {
-                    ans = ans * -1;
-                } else if (s.charAt(i) == ' ') {
-                    break;
-                } else {
-                    ans = ans + ((s.charAt(i) - '0') * multiplier);
-                    multiplier = 10;
-                }
-            }
+        int ans = 0, sign = 1, len = s.length()-1, i = 0;
+        while (i < len && s.charAt(i) == ' ') {
+            i++;
         }
-        return ans;
+
+        if (i < len && s.charAt(i) == '+'){
+            i++;
+        } else if (i < len && s.charAt(i) == '-'){
+            sign = -1;
+            i++;
+        }
+
+        while (i <= len){
+            int digit = s.charAt(i) - '0';
+            if (digit >= 0 && digit <= 9){
+                if ((ans > Integer.MAX_VALUE / 10) ||
+                        (ans == Integer.MAX_VALUE / 10 && digit > Integer.MAX_VALUE % 10)) {
+                    return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+                }
+                ans = (ans * 10) + digit;
+            } else {
+                break;
+            }
+            i++;
+        }
+        return ans * sign;
     }
 }
