@@ -15,10 +15,10 @@ public class StringToInteger {
             i++;
         }
 
-        if (i < len && s.charAt(i) == '+'){
-            i++;
-        } else if (i < len && s.charAt(i) == '-'){
+        if (i < len && s.charAt(i) == '-'){
             sign = -1;
+            i++;
+        } else if (i < len && s.charAt(i) == '+'){
             i++;
         }
 
