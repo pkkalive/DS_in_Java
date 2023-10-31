@@ -10,7 +10,6 @@ public class RearrangeString {
         String A = sc.nextLine();
         String B = sc.nextLine();
         System.out.println(solve(A, B));
-
     }
     public static String solve(String A, String B){
         int len_a = A.length();
