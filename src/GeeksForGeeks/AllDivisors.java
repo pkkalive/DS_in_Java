@@ -9,16 +9,16 @@ public class AllDivisors {
         printAllDivisors(n);
     }
     public static void printAllDivisors(int n){
-        System.out.print(1 + " ");
-        for (int i = 2; i * i <= n; i++) {
+        int i;
+        for (i = 1; i * i < n; i++) {
             if (n % i == 0){
-                if (i * i == n){
-                    System.out.print(i + " ");
-                } else {
-                    System.out.print(i + " " + n/i + " ");
-                }
+                System.out.print(i + " ");
             }
         }
-        System.out.print(n + " ");
+        for ( ; i >= 1; i--) {
+            if (n % i == 0){
+                System.out.print(n/i + " ");
+            }
+        }
     }
 }
