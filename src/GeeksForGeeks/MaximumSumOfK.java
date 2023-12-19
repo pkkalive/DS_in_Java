@@ -2,14 +2,14 @@ package GeeksForGeeks;
 
 public class MaximumSumOfK {
     static int maxSum(int[] nums, int K){
-        int curSum = 0, maxSum, N = nums.length;
+        int curSum = 0, N = nums.length;
         if (K > N){
             return -1;
         }
         for (int i = 0; i < K; i++) {
             curSum += nums[i];
         }
-        maxSum = curSum;
+        int maxSum = curSum;
         for (int i = K; i < N; i++) {
             curSum += (nums[i] - nums[i - K]);
             maxSum = Math.max(maxSum, curSum);
