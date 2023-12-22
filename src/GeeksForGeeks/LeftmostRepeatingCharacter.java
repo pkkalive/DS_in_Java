@@ -3,10 +3,26 @@ package GeeksForGeeks;
 import java.util.Arrays;
 
 public class LeftmostRepeatingCharacter {
-    // Efficient Solution
+    private static final int CHAR = 256;
+    // Efficient Solution 1
     private static int getRepeatingCharacter1(String s) {
+        int n = s.length() - 1, res = -1;
+        boolean[] visited = new boolean[CHAR];
+
+        for (int i = n; i >= 0; i--) {
+            if (visited[s.charAt(i)]) {
+                res = i;
+            } else {
+                visited[s.charAt(i)] = true;
+            }
+        }
+        return res;
+    }
+
+    // Efficient Solution 2
+    private static int getRepeatingCharacter2(String s) {
         int n = s.length(), res = Integer.MAX_VALUE;
-        int[] count = new int[256];
+        int[] count = new int[CHAR];
         Arrays.fill(count, -1);
 
         for (int i = 0; i < n; i++) {
@@ -22,7 +38,7 @@ public class LeftmostRepeatingCharacter {
 
     //Better Solution
     private static int getRepeatingCharacter(String s){
-        int[] count = new int[256];
+        int[] count = new int[CHAR];
         int n = s.length();
         for (int i = 0; i < n; i++) {
             count[s.charAt(i)]++;
@@ -36,12 +52,20 @@ public class LeftmostRepeatingCharacter {
     }
 
     public static void main(String[] args) {
-        //Efficient Solution
+
+        // Efficient Solution 1
         System.out.println(getRepeatingCharacter1("geeksforgeeks"));
         System.out.println(getRepeatingCharacter1("alpha"));
         System.out.println(getRepeatingCharacter1("hello"));
         System.out.println(getRepeatingCharacter1("aeepple"));
         System.out.println(getRepeatingCharacter1("world"));
+
+        // Efficient Solution 2
+        System.out.println(getRepeatingCharacter2("geeksforgeeks"));
+        System.out.println(getRepeatingCharacter2("alpha"));
+        System.out.println(getRepeatingCharacter2("hello"));
+        System.out.println(getRepeatingCharacter2("aeepple"));
+        System.out.println(getRepeatingCharacter2("world"));
 
         // Better Solution
         System.out.println(getRepeatingCharacter("geeksforgeeks"));
