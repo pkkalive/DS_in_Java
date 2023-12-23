@@ -3,9 +3,7 @@ package GeeksForGeeks;
 public class NaivePatternSearching {
 
     private static void patternSearch(String text, String pattern){
-        char[] text_array = text.toCharArray();
-        char[] pattern_array = pattern.toCharArray();
-        int n = text_array.length, m = pattern_array.length;
+        int n = text.length(), m = pattern.length();
         if (m > n){
             System.out.println(" ");
         }
@@ -13,7 +11,7 @@ public class NaivePatternSearching {
         while( i <= n - m ){
             j = 0;
             while (j < m){
-                if(pattern_array[j] != text_array[i + j]){
+                if(pattern.charAt(j)!= text.charAt(i + j)){
                     break;
                 }
                 j++;
