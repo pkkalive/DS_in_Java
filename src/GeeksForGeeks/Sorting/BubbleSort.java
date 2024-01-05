@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+package GeeksForGeeks.Sorting;
 
 public class BubbleSort {
     private static void bubbleSort(int[] arr){

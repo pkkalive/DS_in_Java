@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+package GeeksForGeeks.Sorting;
 
 public class QuickSort {
     // Lomuto Partition

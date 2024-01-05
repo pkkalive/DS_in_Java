@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+package GeeksForGeeks.Sorting;
 
 public class SelectionSort {
     private static void selectionSort(int[] arr){

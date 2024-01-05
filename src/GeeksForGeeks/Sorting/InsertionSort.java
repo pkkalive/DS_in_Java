@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+package GeeksForGeeks.Sorting;
 
 public class InsertionSort {
     private static void insertionSort(int[] arr){

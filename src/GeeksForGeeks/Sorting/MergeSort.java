@@ -1,4 +1,4 @@
-package GeeksForGeeks;
+package GeeksForGeeks.Sorting;
 
 public class MergeSort {
     private static void mergeSort(int[] arr, int left, int right){
