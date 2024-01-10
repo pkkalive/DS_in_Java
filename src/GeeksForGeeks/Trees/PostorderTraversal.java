@@ -15,12 +15,10 @@ public class PostorderTraversal {
             } else {
                 Node temp = stack.peek().right;
                 if (temp == null){
-                    temp = stack.peek();
-                    stack.pop();
+                    temp = stack.pop();
                     list.add(temp.data);
                     while (!stack.empty() && temp == stack.peek().right){
-                        temp = stack.peek();
-                        stack.pop();
+                        temp = stack.pop();
                         list.add(temp.data);
                     }
                 } else {
