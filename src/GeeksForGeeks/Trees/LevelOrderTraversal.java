@@ -2,6 +2,7 @@ package GeeksForGeeks.Trees;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class LevelOrderTraversal {
@@ -11,6 +12,23 @@ public class LevelOrderTraversal {
         queue.add(root);
         while (!queue.isEmpty()){
             Node current = queue.remove();
+            list.add(current.data);
+            if (current.left != null){
+                queue.add(current.left);
+            }
+            if(current.right != null){
+                queue.add(current.right);
+            }
+        }
+        return list;
+    }
+
+    private static ArrayList<Integer> levelOrder1(Node root){
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            Node current = queue.poll();
             list.add(current.data);
             if (current.left != null){
                 queue.add(current.left);
@@ -35,7 +53,12 @@ public class LevelOrderTraversal {
         root.right.right.right = new Node(10);
 
         ArrayList<Integer> list = levelOrder(root);
+        ArrayList<Integer> list1 = levelOrder1(root);
         for (Integer integer : list) {
+            System.out.print(integer + " ");
+        }
+        System.out.println();
+        for (Integer integer : list1) {
             System.out.print(integer + " ");
         }
     }
