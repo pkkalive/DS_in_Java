@@ -8,7 +8,7 @@ public class InorderTraversal {
         ArrayList<Integer> list = new ArrayList<>();
         Stack<Node> stack = new Stack<>();
         Node current = root;
-        while (current != null ||!stack.empty()){
+        while (current != null || !stack.empty()){
             if (current != null){
                 stack.push(current);
                 current = current.left;
